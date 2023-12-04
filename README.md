@@ -1,234 +1,70 @@
-# BackendBCC2B
-Backend para avaliação do 2º bimestre, disciplina LP2 para o curso BCC
+# Getting Started with Create React App
 
-Usuário
-=======
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## GET 
+## Available Scripts
 
-Usuários podem ser recuperados de diversas maneiras:
-Para recuperar todos os usuários basta executar um método GET em 
-https://backend-bcc-2-b.vercel.app/usuario 
+In the project directory, you can run:
 
-É possível obter um usuário pelo código ou informando parte do nome:
-https://backend-bcc-2-b.vercel.app/usuario/1  ou https://backend-bcc-2-b.vercel.app/usuario/aluno
-```json
-{
-    "status": true,
-    "listaUsuarios": [
-        {
-            "id": 1,
-            "nickname": "aluno10",
-            "urlAvatar": "https://thumbs.dreamstime.com/z/%C3%ADcone-do-sinal-do-usu%C3%A1rio-s%C3%ADmbolo-da-pessoa-avatar-humano-84527747.jpg?w=768",
-            "dataIngresso": "03/12/2023",
-            "mensagens": [
-                {
-                    "id": 1,
-                    "dataHora": "03/12/2023, 10:40:32",
-                    "lida": false,
-                    "mensagem": "Que horas começa a prova?",
-                    "usuario": {}
-                }
-            ]
-        }
-    ]
-}
-```
+### `npm start`
 
-## POST
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Para incluir um usuário será preciso enviar enviar um JSON no seguinte formato:
-```json
-{
-    "nickname":"aprovado",
-    "urlAvatar":"url da imagem do usuário"
-}
-```
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Resposta do servidor
-```json
-{
-    "status":true,
-    "id":10,
-    "mensagem": "Usuário incluído com sucesso!"
-}
-```
+### `npm test`
 
-## PUT/PATCH
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Para alterar um usuário será preciso enviar enviar um JSON no seguinte formato:
-```json
-{
-    "id":7,
-    "nickname":"aprovado",
-    "urlAvatar":"url da imagem do usuário"
-}
-```
-**Obs:** Não será possível alterar o campo dataIngresso 
-Resposta do servidor
-```json
-{
-    "status":true,
-    "mensagem": "Usuário atualizado com sucesso!"
-}
-```
+### `npm run build`
 
-## DELETE
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Para excluir um usuário será preciso enviar enviar um JSON no seguinte formato:
-```json
-{
-    "id":7,
-    
-}
-```
-Resposta do servidor
-```json
-{
-    "status":true,
-    "mensagem": "Usuário excluído com sucesso!"
-}
-```
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Mensagens
-=======
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## GET 
+### `npm run eject`
 
-Mensagens podem ser recuperados de diversas maneiras:
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Para recuperar todas as mensagens basta executar um método GET em 
-https://backend-bcc-2-b.vercel.app/mensagem
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-É possível obter uma mensagem pelo código ou por parte do texto da mensagem:
-https://backend-bcc-2-b.vercel.app/mensagem/1 ou https://backend-bcc-2-b.vercel.app/mensagem/prova
-```json
-{
-    "status": true,
-    "listaMensagens": [
-            {
-                "id": 1,
-                "dataHora": "03/12/2023, 10:40:32",
-                "lida": false,
-                "mensagem": "Que horas começa a prova?",
-                "usuario": {
-                    "id": 1,
-                    "nickname": "aluno10",
-                    "urlAvatar": "https://thumbs.dreamstime.com/z/%C3%ADcone-do-sinal-do-usu%C3%A1rio-s%C3%ADmbolo-da-pessoa-avatar-humano-84527747.jpg?w=768",
-                    "dataIngresso": "03/12/2023",
-                    "mensagens": []
-                    }
-            },
-            {
-                "id": 2,
-                "dataHora": "03/12/2023, 10:41:03",
-                "lida": false,
-                "mensagem": "Vai começar às 08h20?",
-                "usuario": {
-                    "id": 3,
-                    "nickname": "passei",
-                    "urlAvatar": "https://thumbs.dreamstime.com/z/%C3%ADcone-do-sinal-do-usu%C3%A1rio-s%C3%ADmbolo-da-pessoa-avatar-humano-84519100.jpg?w=2048",
-                    "dataIngresso": "03/12/2023",
-                    "mensagens": []
-                    }
-            },
-            {
-                "id": 3,
-                "dataHora": "03/12/2023, 11:01:24",
-                "lida": false,
-                "mensagem": "Alguém sabe em qual laboratório?",
-                "usuario": {
-                    "id": 2,
-                    "nickname": "estudioso",
-                    "urlAvatar": "https://thumbs.dreamstime.com/z/%C3%ADcone-do-sinal-do-usu%C3%A1rio-s%C3%ADmbolo-da-pessoa-avatar-humano-84519083.jpg?w=2048",
-                    "dataIngresso": "03/12/2023",
-                    "mensagens": []
-                    }
-            },
-            {
-                "id": 4,
-                "dataHora": "03/12/2023, 11:31:44",
-                "lida": false,
-                "mensagem": "o professor falou que vai ser no lab 4, aquele do subsolo",
-                "usuario": {
-                    "id": 4,
-                    "nickname": "jatodeferias",
-                    "urlAvatar": "https://thumbs.dreamstime.com/z/%C3%ADcone-do-sinal-do-usu%C3%A1rio-s%C3%ADmbolo-da-pessoa-avatar-humano-84531690.jpg?w=2048",
-                    "dataIngresso": "03/12/2023",
-                    "mensagens": []
-                    }
-            },
-            {
-                "id": 5,
-                "dataHora": "03/12/2023, 11:32:16",
-                "lida": false,
-                "mensagem": "Alguém sabe se vai cair redux?",
-                "usuario": {
-                    "id": 4,
-                    "nickname": "jatodeferias",
-                    "urlAvatar": "https://thumbs.dreamstime.com/z/%C3%ADcone-do-sinal-do-usu%C3%A1rio-s%C3%ADmbolo-da-pessoa-avatar-humano-84531690.jpg?w=2048",
-                    "dataIngresso": "03/12/2023",
-                    "mensagens": []
-                }
-            }
-    ]
-}
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## POST
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Para incluir uma mensagem será preciso enviar enviar um JSON no seguinte formato:
-```json
-{
-    "mensagem": "Alguém sabe se vai cair redux?",
-    "usuario": {
-        "id": 4,
-    }
-}
-```
+## Learn More
 
-Resposta do servidor
-```json
-{
-    "status":true,
-    "id":10,
-    "mensagem": "Mensagem incluída com sucesso!"
-}
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## PUT/PATCH
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-É possível somente alterar a propriedade "lido" da mensagem, para isso será preciso enviar o seguinte JSON:
-```json
-{
-    "id":10,
-    "lido": true,
-}
-```
+### Code Splitting
 
-Resposta do servidor
-```json
-{
-    "status":true,
-    "mensagem": "Mensagem atualizada com sucesso!"
-}
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-## DELETE
+### Analyzing the Bundle Size
 
-Para excluir uma mensagem será preciso enviar enviar um JSON no seguinte formato:
-```json
-{
-    "id":7,
-   
-}
-```
-Resposta do servidor
-```json
-{
-    "status":true,
-    "mensagem": "Mensagem excluída com sucesso!"
-}
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
+### Making a Progressive Web App
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
